@@ -1,0 +1,19 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Categorías :D
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let category of categories" 
+              (click)="openCategory(category)">
+        {{ category | titlecase }}
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+    

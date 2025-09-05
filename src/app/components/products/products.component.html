@@ -1,0 +1,28 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Productos - {{ categoria| titlecase }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let producto of productos" (click)="verDetalle(producto.id)">
+
+      <img src="{{ producto.image }}" (error)="onImgError($event)" />
+      <!--
+      Si funciona con imagen de gatito:3
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7qdmUXoZABcWs4Xt5BJkNBweJ7AyBTTooMw&s"
+        (error)="onImgError($event)"/>
+      -->
+
+      <br>
+      <ion-label>
+        <h2>{{ producto.title }}</h2>
+        <ion-note>Precio: {{ producto.price | currency }}</ion-note>
+      </ion-label>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>
